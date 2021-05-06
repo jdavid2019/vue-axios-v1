@@ -1,19 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/icon-jd.png">
+    <h1>Ejemplo de Consumo get - Axios</h1>
     <EAxio />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import EAxio from './components/EAxio.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     EAxio
   }
 }

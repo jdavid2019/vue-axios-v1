@@ -1,13 +1,34 @@
 <template>
    <div>
-  <p v-for="item in all" :key="item.id"  >
-    {{item.id}} - {{item.title}} - <b v-bind:class="item.completed==false?'red':'green'">{{item.completed}}</b>
-  </p>
+     <table border="2">
+       <thead>
+          <td>
+            <tr>ID</tr>
+          </td>
+          <td>
+            <tr>TITLE</tr>
+          </td>
+          <td>
+            <tr>STATUS</tr>
+          </td>
+       </thead>
+       <tbody v-for="item in all" :key="item.id" >
+           <td>
+             <tr>{{item.id}}</tr>
+           </td>
+           <td>
+             <tr>{{item.title}}</tr>
+           </td>
+           <td>
+             <tr v-bind:class="item.completed==false?'red':'green'">{{item.completed}}</tr>
+           </td>
+       </tbody>
+     </table>
    </div>
 </template>
 
 <script>
-import axios from 'axios';
+//import axios from 'axios';
 
 export default {
 name: 'EAxio',
@@ -23,7 +44,7 @@ name: 'EAxio',
   methods: {
     getData(){
       console.log('enter to the method')
-      axios.get('https://jsonplaceholder.typicode.com/todos').then(
+      this.axios.get("https://jsonplaceholder.typicode.com/todos").then(
           response => {
             console.log(response)
             this.all = response.data
@@ -44,4 +65,7 @@ name: 'EAxio',
 .green{
   color: green;
 }
+
+
+
 </style>
